@@ -13,6 +13,7 @@ RUN wget http://kindlegen.s3.amazonaws.com/${KINDLEGEN} && \
     tar zxf ${KINDLEGEN} -C /opt/kindlegen && \
     rm ${KINDLEGEN}
 
+COPY narou-3.1.1.gem .
 RUN gem install narou -v ${NAROU_VERSION} --no-document
 
 COPY init.sh /usr/local/bin

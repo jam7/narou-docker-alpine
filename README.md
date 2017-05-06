@@ -31,7 +31,7 @@ All data are stored in `/opt/narou`.  So use `docker run -v $HOME/.narou:/opt/na
 
 ## Run as web service
 
-Use `docker run -p IP-ADDRESS:8000:8000 narou web -p 8000 -n`.
+Use `docker run -p IP-ADDRESS:8000-8001:8000-8001 narou web -p 8000 -n`.  Narou.rb uses sepecified port 8000 for web server and +1 port 8001 for push_server.
 
 ## License
 

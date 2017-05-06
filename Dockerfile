@@ -19,4 +19,4 @@ RUN gem install narou -v ${NAROU_VERSION} --no-document
 COPY init.sh /usr/local/bin
 
 ENTRYPOINT ["init.sh"]
-CMD ["narou", "web", "-p", "8000", "-n"]
+CMD ["narou"]

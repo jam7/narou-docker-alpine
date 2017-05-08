@@ -7,6 +7,7 @@ WORKDIR /opt/narou
 RUN apk --update add ruby ruby-io-console ruby-json wget unzip && rm -rf /var/cache/apk/*
 
 RUN wget https://github.com/jam7/AozoraEpub3/releases/download/1.1.0b46/${AOZORA_EPUB3} -O /opt/AozoraEpub3.zip
+RUN wget https://github.com/jam7/AozoraEpub3/releases/download/openjdk-support/AozoraEpub3.jar -O /opt/AozoraEpub3.jar
 
 RUN wget http://kindlegen.s3.amazonaws.com/${KINDLEGEN} && \
     mkdir -p /opt/kindlegen && \

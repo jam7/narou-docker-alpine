@@ -1,5 +1,6 @@
 
-VERSION = v1.4
+RELEASE_VERSION = v1.5
+VERSION = latest
 
 OPTIONS = \
 	--build-arg http_proxy=${http_proxy} \
@@ -9,5 +10,8 @@ OPTIONS = \
 
 build: FORCE
 	docker build -t jam7/narou-alpine:${VERSION} ${OPTIONS} .
+
+release: FORCE
+	docker build -t jam7/narou-alpine:${RELEASE_VERSION} ${OPTIONS} .
 
 FORCE:

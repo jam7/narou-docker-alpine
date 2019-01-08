@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine
 ENV AOZORA_EPUB3 AozoraEpub3-1.1.0b46.zip
 ENV KINDLEGEN kindlegen_linux_2.6_i386_v2_9.tar.gz
-ENV NAROU_VERSION 3.2.5.1
+ENV NAROU_VERSION 3.4.1
 WORKDIR /opt/narou
 
 RUN apk --update add ruby ruby-io-console ruby-json wget unzip && rm -rf /var/cache/apk/*

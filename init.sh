@@ -2,7 +2,7 @@
 
 if [ ! -d "/opt/narou/.narou" ]; then
   unzip -q /opt/AozoraEpub3.zip -d /opt/narou/AozoraEpub3
-  cp /opt/AozoraEpub3.jar /opt/narou/AozoraEpub3
+#  cp /opt/AozoraEpub3.jar /opt/narou/AozoraEpub3
   ln -s /opt/kindlegen/kindlegen /opt/narou/AozoraEpub3
   narou init -p /opt/narou/AozoraEpub3 -l 1.6
   narou setting device=kindle

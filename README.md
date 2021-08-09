@@ -18,10 +18,8 @@ $ chmod a+x narou
 Don't add `-ti` to `docker run`.  Otherwise, you may create a narou
 script with crlf.
 
-## How to use it
-
-Use a generated narou script.  All downloaded data is stored at
-$HOME/.narou.
+Run a generated script to download AozoraEpub3 to `$HOME/.narou/AozoraEpub3*`
+and initialize environment for narou.rb.
 
 ```
 $ ./narou list
@@ -52,6 +50,31 @@ device を kindle に設定しました
 
 $
 ```
+
+## How to use it
+
+Use a generated narou script.  All downloaded data is stored at
+$HOME/.narou.
+
+```
+$ narou d https://ncode.syosetu.com/n6813gp/
+```
+
+### How to send mobi to kindle
+
+From WSL2, perform mount first.
+
+```
+$ sudo mkdir -p /mnt/Kindle
+$ sudo mount -t drvfs D: /mnt/Kindle
+```
+
+Then, use narou send.
+
+```
+$ narou send
+```
+
 
 ### Run as web service (not tested recently)
 

@@ -1,5 +1,5 @@
 
-RELEASE_VERSION = v1.14
+RELEASE_VERSION = v1.15
 VERSION = latest
 
 OPTIONS = \
@@ -9,9 +9,9 @@ OPTIONS = \
 	--build-arg no_proxy=${no_proxy}
 
 build: FORCE
-	docker build -t jam7/narou-alpine:${VERSION} ${OPTIONS} .
+	docker build -t jam7/narou:${VERSION} ${OPTIONS} .
 
 release: FORCE
-	docker build -t jam7/narou-alpine:${RELEASE_VERSION} ${OPTIONS} .
+	docker build -t jam7/narou:${RELEASE_VERSION} ${OPTIONS} .
 
 FORCE:

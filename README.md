@@ -69,16 +69,23 @@ $ sudo mkdir -p /mnt/Kindle
 $ sudo mount -t drvfs D: /mnt/Kindle
 ```
 
-Then, use narou send.
+Then, use `narou send`.
 
 ```
 $ narou send
 ```
 
+Unmount them.  This may takes for a while.
+
+```
+$ sudo umount /mnt/Kindle
+```
 
 ### Run as web service (not tested recently)
 
-Use `docker run -p IP-ADDRESS:8000-8001:8000-8001 narou web -p 8000 -n`.  Narou.rb uses sepecified port 8000 for web server and +1 port 8001 for push_server.
+Use `docker run -p IP-ADDRESS:8000-8001:8000-8001 narou web -p 8000 -n`.
+The narou.rb uses sepecified port 8000 for web server and +1 port 8001
+for push_server.
 
 ## How to convert old data
 

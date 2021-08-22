@@ -58,7 +58,7 @@ esac
 docker run $TTY --rm $opt \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v $data:/opt/narou \
-    -v /mnt/Kindle:/mnt/Kindle \
+    -v /mnt/Kindle/:/mnt/Kindle \
     -e NAROU_UID="$( id -u )" \
     -e NAROU_GID="$( id -g )" \
     -e NAROU_USER="$( id -un )" \

@@ -15,8 +15,8 @@ $ docker run --rm jam7/narou > narou
 $ chmod a+x narou
 ```
 
-Don't add `-ti` to `docker run`.  Otherwise, you may create a narou
-script with crlf.
+Don't add `-ti` to `docker run`.  Otherwise, your narou script may contains
+crlf.
 
 Run a generated script to download AozoraEpub3 to `$HOME/.narou/AozoraEpub3*`
 and initialize environment for narou.rb.
@@ -66,7 +66,7 @@ From WSL2, perform mount first.
 
 ```
 $ sudo mkdir -p /mnt/Kindle
-$ sudo mount -t drvfs D: /mnt/Kindle
+$ sudo mount -t drvfs d:/ /mnt/Kindle
 ```
 
 Then, use `narou send`.
@@ -75,10 +75,15 @@ Then, use `narou send`.
 $ narou send
 ```
 
-Unmount them.  This may takes for a while.
+Unmount them.  It is required to run umount three times on Ubuntu-20.04 with
+WSL2.
 
 ```
-$ sudo umount /mnt/Kindle
+$ sudo umount d:/
+$ sudo umount d:/
+$ sudo umount d:/
+$ sudo umount d:/
+umount: d:/: no mount point specified.
 ```
 
 ### Run as web service (not tested recently)

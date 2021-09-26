@@ -54,11 +54,23 @@ xinit)
   ;;
 esac
 
+if [ -d /mnt/Kindle/documents ]; then
+  MNT_KINDLE_OPT="-v"
+  MNT_KINDLE="/mnt/Kindle/documents:/mnt/Kindle/documents"
+else
+  MNT_KINDLE_OPT=""
+  MNT_KINDLE=""
+fi
+
 # Need to mount docker.sock in order to use jam7/kindlegen docker image.
+# Need to mount kindle device also.
+#   '-v /mnt/Kindle:/mnt/Kindle' rarely works.
+#   '-v /mnt/Kindle/documents:/mnt/Kindle/documents' works.
+#   Related issue: https://github.com/docker/for-win/issues/2151
 docker run $TTY --rm $opt \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v $data:/opt/narou \
-    -v /mnt/Kindle/:/mnt/Kindle \
+    $MNT_KINDLE_OPT $MNT_KINDLE \
     -e NAROU_UID="$( id -u )" \
     -e NAROU_GID="$( id -g )" \
     -e NAROU_USER="$( id -un )" \

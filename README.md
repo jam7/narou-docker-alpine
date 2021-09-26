@@ -11,6 +11,7 @@ Download container and run it to generate kindlegen script.
 
 ```
 $ docker pull jam7/narou
+$ docker pull jam7/kindlegen
 $ docker run --rm jam7/narou > narou
 $ chmod a+x narou
 ```

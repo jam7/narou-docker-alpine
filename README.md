@@ -63,7 +63,7 @@ $ narou d https://ncode.syosetu.com/n6813gp/
 
 ### How to send mobi to kindle
 
-From WSL2, perform mount first.
+From Linux under WSL2, perform mount Kindle first.
 
 ```
 $ sudo mkdir -p /mnt/Kindle
@@ -76,8 +76,8 @@ Then, use `narou send`.
 $ narou send
 ```
 
-Unmount them.  It is required to run umount three times on Ubuntu-20.04 with
-WSL2.
+After `naoru send`, unmount Kindle like below.  It is required to run
+`umount` three times on Ubuntu-20.04 under WSL2.
 
 ```
 $ sudo umount d:/

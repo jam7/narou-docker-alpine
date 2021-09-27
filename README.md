@@ -9,7 +9,7 @@ Need to install docker.
 
 Download container and run it to generate kindlegen script.
 
-```
+```shell-session
 $ docker pull jam7/narou
 $ docker pull jam7/kindlegen
 $ docker run --rm jam7/narou > narou
@@ -22,7 +22,7 @@ crlf.
 Run a generated script to download AozoraEpub3 to `$HOME/.narou/AozoraEpub3*`
 and initialize environment for narou.rb.
 
-```
+```shell-session
 $ ./narou list
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -57,7 +57,7 @@ $
 Use a generated narou script.  All downloaded data is stored at
 $HOME/.narou.
 
-```
+```shell-session
 $ narou d https://ncode.syosetu.com/n6813gp/
 ```
 
@@ -65,21 +65,21 @@ $ narou d https://ncode.syosetu.com/n6813gp/
 
 From Linux under WSL2, perform mount Kindle first.
 
-```
+```shell-session
 $ sudo mkdir -p /mnt/Kindle
 $ sudo mount -t drvfs d:/ /mnt/Kindle
 ```
 
 Then, use `narou send`.
 
-```
+```shell-session
 $ narou send
 ```
 
 After `naoru send`, unmount Kindle like below.  It is required to run
 `umount` three times on Ubuntu-20.04 under WSL2.
 
-```
+```shell-session
 $ sudo umount d:/
 $ sudo umount d:/
 $ sudo umount d:/
@@ -99,7 +99,7 @@ From v1.14, narou-docker changes to run as a host user.  So, it is required
 to chown $HOME/.narou to a host user is required.  Old narou-docker runs as
 a root user.
 
-```
+```shell-session
 $ sudo chown -R `id -u`:`id -g` $HOME/.narou
 ```
 
@@ -107,7 +107,7 @@ $ sudo chown -R `id -u`:`id -g` $HOME/.narou
 
 In order to build image by yourself, perform `make`
 
-```
+```shell-session
 $ make
 ```
 

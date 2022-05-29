@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk8:alpine-slim
 LABEL maintainer "Kazushi (Jam) Marukawa <jam@pobox.com>"
 
-ENV NAROU_VERSION 3.8.0
+ENV NAROU_VERSION 3.8.1
 WORKDIR /opt/narou
 
 RUN apk --update add --no-cache ruby ruby-io-console ruby-json ruby-etc ca-certificates curl unzip docker-cli su-exec
